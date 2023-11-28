@@ -1,35 +1,36 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import img1 from '../src/assets/icon01.jpeg'
+import img2 from './assets/Mario Star Pixel  - PngFind.jpeg'
+import img3 from './assets/Hello kitty pixel art.jpeg'
+
+import Cards from './card';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>AppleSeeds React App</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+   <div className="container">
+      <Cards 
+        image = {img1} 
+        title="Star" 
+        description = "This is a pixel image of the star in Mario" 
+        link="https://motion.page/academy/" 
+      />
+      <Cards 
+        image={img2}
+        title="Hello Kitty" 
+        description="Ever saw a kitty with muscles?" 
+        link="https://motion.page/academy/" 
+      />
+      <Cards 
+        image= {img3}
+        title="Mushroom" 
+        description="Mushrooms from different dimention ha" 
+        link="https://motion.page/academy/" 
+      />
+    </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
