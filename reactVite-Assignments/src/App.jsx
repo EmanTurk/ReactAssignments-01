@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import './button'
+import Button from './button';
 
 function App() {
-
   return (
-    <>
-   
-     <h1>Hello</h1>
-    </>
-  )
+    //render twice= use it twice here/
+    <div className='container'>
+      <Button text="Important" isBold={true} />
+      <Button text="Not Important" isBold={false} />
+    </div>
+  );
 }
 
 export default App
