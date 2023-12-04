@@ -1,24 +1,23 @@
-import './App.css'
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 
-function App() {
-const [count, setCount] = useState(4)
+function FavoriteColorComponent() {
+  const [favoriteColor, setFavoriteColor] = useState('blue');
 
-function decrementCount (){
-  setCount (previousCount => previousCount-1)
-}
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFavoriteColor('green');
+    }, 1000);
 
-function increaseCount (){
-  setCount (count+1)
-}
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-    <button onClick={decrementCount}>-</button>
-<span>{count}</span>   
- <button onClick={increaseCount}>+</button>
+      <h1>My favorite color is {favoriteColor}</h1>
+      <div id="colorDisplayDiv"></div>
     </>
-  )
+  );
 }
 
-export default App
+export default FavoriteColorComponent;
+
